@@ -7,8 +7,7 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "eslint:fix": "eslint ./ --fix",
-    "prettier:fix": "npx prettier ./ --write",
-    "prepare": "husky install"
+    "prettier:fix": "npx prettier ./ --write"
   },
   "author": "Roman Zayats",
   "license": "ISC",
