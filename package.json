@@ -1,0 +1,24 @@
+{
+  "name": "udemy-nodejs-task-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "eslint:fix": "eslint ./ --fix",
+    "prettier:fix": "npx prettier ./ --write"
+  },
+  "author": "Roman Zayats",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^8.9.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "prettier": "3.0.0"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}
