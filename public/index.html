@@ -18,6 +18,7 @@
       .done {
         text-decoration: line-through;
       }
+
       [v-cloak] {
         display: none;
       }
@@ -41,7 +42,7 @@
                 </v-icon>
               </v-btn>
             </template>
-            <span>{{isDark ? 'Light theme' : 'Dark theme'}}</span>
+            <span>{{ isDark ? 'Light theme' : 'Dark theme' }}</span>
           </v-tooltip>
         </v-toolbar>
         <v-container>
@@ -51,11 +52,11 @@
                 <v-list two-line subheader>
                   <v-container>
                     <v-subheader class="headline">
-                      {{new Date() | date}}
+                      {{ new Date() | date }}
                     </v-subheader>
                     <v-spacer></v-spacer>
 
-                    <p class="text-xs-right"><b>{{todos.length}}</b> Tasks</p>
+                    <p class="text-xs-right"><b>{{ todos.length }}</b> Tasks</p>
 
                     <v-flex xs12>
                       <v-text-field
@@ -87,10 +88,11 @@
                       </v-list-tile-action>
                       <v-list-tile-content>
                         <v-list-tile-title :class="{done: todo.done}">
-                          {{todo.title | capitalize}}
+                          {{ todo.title | capitalize }}
                         </v-list-tile-title>
                         <v-list-tile-sub-title>
-                          Added on: {{todo.date | date}}
+                          Added on: {{ todo.createdAt | date(true) }} (updated
+                          {{ todo.updatedAt | date(true) }})
                         </v-list-tile-sub-title>
                       </v-list-tile-content>
                       <v-btn
