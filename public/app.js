@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 new Vue({
   el: "#app",
   data() {
@@ -37,7 +38,26 @@ new Vue({
         .catch((e) => console.log(e));
     },
     removeTodo(id) {
-      this.todos = this.todos.filter((t) => t.id !== id);
+      fetch(`/api/todo/${id}`, {
+        method: "DELETE",
+      })
+        .then(() => {
+          this.todos = this.todos.filter((t) => t.id !== id);
+        })
+        .catch((e) => console.log(e));
+    },
+    completeTodo(id) {
+      fetch(`/api/todo/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ done: true }),
+      })
+        .then((res) => res.json())
+        .then(({ todo }) => {
+          const idx = this.todos.findIndex((t) => t.id === todo.id);
+          this.todos[idx].updatedAt = todo.updatedAt;
+        })
+        .catch((e) => console.log(e));
     },
   },
   filters: {

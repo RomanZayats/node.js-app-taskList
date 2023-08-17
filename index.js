@@ -13,6 +13,7 @@ app.use(express.json());
 
 app.use("/api/todo", todoRoutes);
 
+// eslint-disable-next-line no-unused-vars
 app.use((req, res, next) => {
   res.sendFile("/index.html");
 });
