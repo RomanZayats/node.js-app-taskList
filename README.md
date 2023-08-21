@@ -1,1 +1,1 @@
-NodeJS, ExpressJS, MySQL, Vue
+NodeJS, ExpressJS, MySQL, GraphQL, Vue
