@@ -28,4 +28,14 @@ module.exports = {
       throw new Error("Update todo error");
     }
   },
+  async deleteTodo({ id }) {
+    try {
+      const todo = await Todo.findByPk(id);
+      await todo.destroy();
+      return true;
+    } catch (e) {
+      console.log("Delete todo error");
+      return false;
+    }
+  },
 };
