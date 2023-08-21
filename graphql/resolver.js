@@ -8,4 +8,14 @@ module.exports = {
       throw new Error("Fetching error");
     }
   },
+  async createTodo({ todo }) {
+    try {
+      return await Todo.create({
+        title: todo.title,
+        done: false,
+      });
+    } catch (e) {
+      throw new Error("Create todo error");
+    }
+  },
 };
